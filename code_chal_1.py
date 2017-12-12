@@ -20,16 +20,16 @@ Sample Output:
 AGCCTTTAG
 """
 
-def PatternCount(text, pattern):
+def pattern_count(text, pattern):
     t = len(text) #sets t to the length of the text
     p = len(pattern) #sets p to the length of the pattern
     count = 0
     for i in range(t-p + 1):
-        if PatternMatch(text, pattern, i):
+        if pattern_match(text, pattern, i):
             count += 1
     return count
 
-def PatternMatch(text, pattern, i):
+def pattern_match(text, pattern, i):
     for j in range(len(pattern)):
         if pattern[j] != text[i+j]:
             return False
