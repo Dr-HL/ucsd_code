@@ -17,19 +17,26 @@ GCG
 
 Sample Output:
 2
+AGCCTTTAG
 """
 
-import re
-
 def PatternCount(text, pattern):
-    matches = []
-    for i in range(len(text) - len(pattern)):
-        for j in range(0,len(pattern)):
-            if text[i+j] == pattern[j]:
-                matches.append[i]
-        else:
-            break
-    return matches
+    t = len(text) #sets t to the length of the text
+    p = len(pattern) #sets p to the length of the pattern
+    count = 0
+    for i in range(t-p + 1):
+        if PatternMatch(text, pattern, i):
+            count += 1
+    return count
 
-print(PatternCount('GCGCG', 'GCG'))
-print(PatternCount('ACGTACGTACGT', 'CG'))
+def PatternMatch(text, pattern, i):
+    for j in range(len(pattern)):
+        if pattern[j] != text[i+j]:
+            return False
+    return True
+
+#print(PatternCount('GCGCG', 'GCG'))
+#print(PatternCount('ACGTACGTACGT', 'CG'))
+#print(PatternCount('AAAGAGTGTCTGATAGCAGCTTCTGAACTGGTTACCTGCCGTGAGTAAATTAAATTTTATTGACTTAGGTCACTAAATACTTTAACCAATATAGGCATAGCGCACAGACAGATAATAATTACAGAGTACACAACATCCAT', 'AAA'))
+#print(PatternCount('AGCGTGCCGAAATATGCCGCCAGACCTGCTGCGGTGGCCTCGCCGACTTCACGGATGCCAAGTGCATAGAGGAAGCGAGCAAAGGTGGTTTCTTTCGCTTTATCCAGCGCGTTAACCACGTTCTGTGCCGACTTT', 'TTT'))
+#print(PatternCount(Readfile, 'GACCTCAGA'))
