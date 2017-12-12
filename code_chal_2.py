@@ -9,7 +9,17 @@ counts(kmer) ← counts(kmer) + 1
 count ← count + 1
 return all kmers where counts(kmer) = max(counts)
 
-12
+    FrequentWords(Text, k)
+        FrequentPatterns ← an empty set
+        for i ← 0 to |Text| − k
+            Pattern ← the k-mer Text(i, k)
+            Count(i) ← PatternCount(Text, Pattern)
+        maxCount ← maximum value in array Count
+        for i ← 0 to |Text| − k
+            if Count(i) = maxCount
+                add Text(i, k) to FrequentPatterns
+        remove duplicates from FrequentPatterns
+        return FrequentPatterns
 """
 
 #fw_file = input('Enter file: ')
