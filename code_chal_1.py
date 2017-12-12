@@ -7,18 +7,24 @@
             if Text(i, |Pattern|) = Pattern
                 count ← count + 1
         return count
-
-Input: Strings Text and Pattern.
-Output: Count(Text, Pattern)
-
- Sample Input:
-GCGCG
-GCG
-
-Sample Output:
-2
-AGCCTTTAG
 """
+
+ref_file = 'cholera_ref_genome.txt'
+ori_file = 'cholera_ori_seq.txt'
+
+def open_ref_genome(ref_file):
+    with open(ref_file, 'r') as ref:
+        ref = ref.read().rstrip()
+        ref = ref.upper()
+        #return ref
+        print(ref)
+
+def open_ori_seq(ori_file):
+    with open(ori_file, 'r') as ori:
+        ori = ori.read().rstrip()
+        ori = ori.upper()
+        #return ori
+        print(ori)
 
 def pattern_count(text, pattern):
     t = len(text) #sets t to the length of the text
@@ -35,8 +41,10 @@ def pattern_match(text, pattern, i):
             return False
     return True
 
-#print(PatternCount('GCGCG', 'GCG'))
-#print(PatternCount('ACGTACGTACGT', 'CG'))
-#print(PatternCount('AAAGAGTGTCTGATAGCAGCTTCTGAACTGGTTACCTGCCGTGAGTAAATTAAATTTTATTGACTTAGGTCACTAAATACTTTAACCAATATAGGCATAGCGCACAGACAGATAATAATTACAGAGTACACAACATCCAT', 'AAA'))
-#print(PatternCount('AGCGTGCCGAAATATGCCGCCAGACCTGCTGCGGTGGCCTCGCCGACTTCACGGATGCCAAGTGCATAGAGGAAGCGAGCAAAGGTGGTTTCTTTCGCTTTATCCAGCGCGTTAACCACGTTCTGTGCCGACTTT', 'TTT'))
-#print(PatternCount(Readfile, 'GACCTCAGA'))
+open_ref_genome(ref_file)
+open_ori_seq(ori_file)
+#text = open_ref_genome(ref_file)
+#pattern = open_ori_seq(ori_file)
+
+
+#print(pattern_count(text,pattern))

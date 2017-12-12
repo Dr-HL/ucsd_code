@@ -42,6 +42,6 @@ def frequent_words(text, k):
             out.append(kmer)
     return out
 
-text = open_file(fw_file)
-k = 11
+text = 'TAAACGTGAGAGAAACGTGCTGATTACACTTGTTCGTGTGGTAT'
+k = 3
 print(frequent_words(text, k))
