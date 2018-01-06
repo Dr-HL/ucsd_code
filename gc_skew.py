@@ -28,6 +28,6 @@ def min_skew(skew_list):
 
     return final_indices
 
-sequence = open_file('genomedata.txt')
+sequence = 'GATACACTTCCCGAGTAGGTACTG'
 
 print(min_skew(gc_count_skew(sequence)))

@@ -41,5 +41,3 @@ def number_to_symbol(base_ten_index, k):
 def number_to_pattern(index, k):
     symbol = ''.join(number_to_symbol(index, k))
     return symbol[-k:]
-
-print(number_to_pattern(5344, 9))

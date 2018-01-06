@@ -31,8 +31,6 @@ def recursive_neighbors(sequence, d):
     return list_w_rc
 
 
-
-
 def immediate_neighbors(pattern):
     neighborhood = [pattern]
     #neighborhood.add(pattern)
@@ -58,10 +56,3 @@ def iterative_neighbors(pattern, d):
             print(new_neighbor)
 
     return new_neighborhood
-
-"""
-with open('testwrite2.txt', 'w') as fw:
-    output = '\n'.join(str(s) for s in recursive_neighbors(sequence, d))
-    fw.write(output)
-    fw.close()
-"""
