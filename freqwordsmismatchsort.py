@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import frequentwords_2 as fw
 import approxpatterncount as apc
 import neighbors
@@ -25,21 +24,20 @@ def freq_seq_mismatch_sort(genome, k, d):
 
     flattened_neighborhood = [i for i in apc.iter_flatten(neighborhoods)]
 
-    for i in range(len(neighborhoods) - 1):
+    for i in range(len(flattened_neighborhood)):
         pattern = flattened_neighborhood[i]
         pos_index.append(ptn.pattern_to_number(pattern))
         count.append(1)
 
     sorted_index = sorted(pos_index)
 
-    for i in range(len(neighborhoods) - 1):
+    for i in range(len(flattened_neighborhood)):
         if sorted_index[i] == sorted_index[i + 1]:
             count[i + 1] = count[i] + 1
-            print(count)
 
     max_count = max(count)
 
-    for i in range(len(neighborhoods) - 1):
+    for i in range(len(flattened_neighborhood)):
         if count[i] == max_count:
             pattern = ntp.number_to_pattern(sorted_index[i], k)
             frequent_patterns.add(pattern)

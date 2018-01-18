@@ -30,14 +30,10 @@ def hamming_distance(sequence_one, sequence_two):
             distance += 1
     return distance
 
-
-
 def h_d(seq_one, seq_two):
     assert len(seq_one) == len(seq_two)
     ne = operator.ne
     return sum(map(ne, seq_one, seq_two))
-
-
 
 def approx_pattern_count(sequence, kmer, d):
     list_of_kmers =[]
@@ -47,9 +43,9 @@ def approx_pattern_count(sequence, kmer, d):
         if h_d(kmer, new_kmer) <= d:
             list_of_kmers.append(new_kmer)
             count += 1
-    print(count)
-    return list_of_kmers
+    return count
 
+#print(approx_pattern_count('TACGCATTACAAAGCACA', 'AA', 1))
 
 def get_position(array_of_kmers):
     array_of_positions = []

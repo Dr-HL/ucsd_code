@@ -10,7 +10,9 @@ def open_file(fw_file):
 
 def frequent_words(text, k):
     count = {}
-    for i in range(len(text)-k+1): #why +1?
+    all_kmers = []
+    for i in range(len(text) - k + 1):
+        all_kmers.append(text[i:i+k])
         if text[i:i+k] not in count:
             count[text[i:i+k]] = 0
         count[text[i:i+k]] += 1
@@ -19,8 +21,8 @@ def frequent_words(text, k):
     for kmer in count:
         if count[kmer] == m:
             out.append(kmer)
-    return out
+    return count
 
-text = 'TAAACGTGAGAGAAACGTGCTGATTACACTTGTTCGTGTGGTAT'
-k = 3
-print(frequent_words(text, k))
+#text = 'ACGTTGCATGTCGCATGATGCATGAGAGCT'
+#k = 4
+#print(frequent_words(text, k))

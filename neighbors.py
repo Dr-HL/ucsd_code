@@ -2,6 +2,8 @@
 
 import approxpatterncount as apc
 import reversecomplement as rc
+import sys
+
 """
 Suffix function returns the suffix for each sequence
 that is passed through.
@@ -23,13 +25,14 @@ def recursive_neighbors(sequence, d):
     list_w_rc = []
     suffix_neighbors = recursive_neighbors(suffix(sequence), d)
     for text in suffix_neighbors:
-        if apc.h_d(suffix(sequence), text) < d:
+        if apc.h_d(suffix(sequence), text) <= d:
             for x in ['A', 'C', 'G', 'T']:
                 list_w_rc.append(''.join([x, text]))
         else:
             list_w_rc.append(''.join([sequence[0], text]))
     return list_w_rc
 
+#print(recursive_neighbors('GGCCCAGAG', 3))
 
 def immediate_neighbors(pattern):
     neighborhood = [pattern]
@@ -56,3 +59,11 @@ def iterative_neighbors(pattern, d):
             print(new_neighbor)
 
     return new_neighborhood
+
+sequence = 'GTACCTCGAAC'
+d = 3
+
+"""
+with open('testwrite.txt', 'wt') as w:
+    w.write('\n'.join(map(str, recursive_neighbors(sequence, d))) + '\n')
+"""

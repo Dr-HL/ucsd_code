@@ -41,8 +41,11 @@ def pattern_match(text, pattern, i):
             return False
     return True
 
-open_ref_genome(ref_file)
-open_ori_seq(ori_file)
+text = 'CATGCCATTCGCATTGTCCCAGTGA'
+pattern = 'CCC'
+print(pattern_count(text, pattern))
+#open_ref_genome(ref_file)
+#pen_ori_seq(ori_file)
 #text = open_ref_genome(ref_file)
 #pattern = open_ori_seq(ori_file)
 

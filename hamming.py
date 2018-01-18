@@ -16,4 +16,4 @@ def hamming_distance(sequence_one, sequence_two):
             count += 1
     return count
 
-print(hamming_distance(sequence_one, sequence_two))
+#print(hamming_distance(sequence_one, sequence_two))

@@ -14,8 +14,8 @@ def match_position(text, pattern):
     for i in range(t-p + 1):
         if pattern_match(text,pattern,i):
             match_positions.append(i)
-    new_match_positions = ' '.join(str(item) for item in match_positions)
-    return new_match_positions
+    #new_match_positions = ' '.join(str(item) for item in match_positions)
+    return match_positions
 
 def pattern_match(text, pattern, i):
     for j in range(len(pattern)):

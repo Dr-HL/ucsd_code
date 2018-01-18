@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-sequence = 'GAGCCACCGCGATA'
+sequence = 'GATACACTTCCCGAGTAGGTACTG'
 
 def gc_count_skew(sequence):
     skew = [0]
@@ -10,8 +10,10 @@ def gc_count_skew(sequence):
             skew[i + 1] = skew[i] + 1
         if sequence[i] == 'C':
             skew[i + 1] = skew[i] - 1
+    max_skew = max(skew)
     final_count = ' '.join(map(str, skew))
-    return final_count
+
+    return max_skew
 
 
-print(gc_skew(sequence))
+print(gc_count_skew(sequence))

@@ -28,6 +28,6 @@ def min_skew(skew_list):
 
     return final_indices
 
-sequence = 'GATACACTTCCCGAGTAGGTACTG'
+sequence = 'GCATACACTTCCCAGTAGGTACTG'
 
 print(min_skew(gc_count_skew(sequence)))
