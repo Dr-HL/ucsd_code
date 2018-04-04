@@ -30,8 +30,8 @@ def hamming_distance(sequence_one, sequence_two):
             distance += 1
     return distance
 
-def h_d(seq_one, seq_two):
-    assert len(seq_one) == len(seq_two)
+def hamming_distance_v2(seq_one, seq_two):
+    #assert len(seq_one) == len(seq_two)
     ne = operator.ne
     return sum(map(ne, seq_one, seq_two))
 

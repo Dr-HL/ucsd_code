@@ -23,9 +23,9 @@ def recursive_neighbors(sequence, d):
     if len(sequence) == 1:
         return ['A', 'C', 'G', 'T']
     list_w_rc = []
-    suffix_neighbors = recursive_neighbors(suffix(sequence), d)
+    suffix_neighbors = recursive_neighbors(sequence[1:], d)
     for text in suffix_neighbors:
-        if apc.h_d(suffix(sequence), text) <= d:
+        if apc.h_d(suffix(sequence), text) < d:
             for x in ['A', 'C', 'G', 'T']:
                 list_w_rc.append(''.join([x, text]))
         else:

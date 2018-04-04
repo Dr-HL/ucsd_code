@@ -18,21 +18,14 @@ import approxpatterncount as apc
 the function generate_kmers returns a list of all kmers for a given
 dna sequence with zero mismatches
 """
-def generate_kmers(dna, k):
-    list_of_generated_kmers = []
-    for i in range(len(dna) - k + 1):
-        list_of_generated_kmers.append(dna[i:i+k])
-    return list_of_generated_kmers
+
 
 """
 the function generate_neighborhoods returns a list of all kmers
 for a given dna sequence with at most d mismatches
 """
 
-def generate_neighborhoods(dna, k, d):
-    for i in range(len(dna) - k):
-        dna_neighborhood = neighbors.recursive_neighbors(dna[i:i+k], d)
-    return dna_neighborhood
+
 
 
 def brute_force_motif_enum(dna, k, d):
@@ -62,8 +55,8 @@ def main():
 
     for list_of_kmers in list_of_kmers_from_dna:
         for dna in list_of_kmers:
-            nkmer_list = generate_neighborhoods(dna, k, d)
+            list_of_nkmers_from_dna.append(generate_neighborhoods(dna, k, d))
 
-    #return list_of_kmers_from_dna
+    return list_of_nkmers_from_dna
 
 print(main())
