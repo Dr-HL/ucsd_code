@@ -86,13 +86,16 @@ def distance_pattern_string(k_mer, dna_list):
 def median_string(dna_list, k):
     """generates the median string that has the minimum distance"""
 
+    median_list = []
+
     distance = k * (len(dna_list) - 1)
     for i in range(4**k - 1):
         k_mer = ntp.number_to_pattern(i,k)
         if distance > distance_pattern_string(k_mer,dna_list):
             distance = distance_pattern_string(k_mer,dna_list)
             median = k_mer
-    return median
+            median_list.append(k_mer)
+    return median_list
 
 
 
