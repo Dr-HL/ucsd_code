@@ -124,13 +124,14 @@ def kmer_probability_dict_generator(kmer_dict, initial_matrix_dict):
 
     return kmer_dict
 
+"""
 pprint.pprint(
     kmer_probability_dict_generator(
         sequence_kmer_generator_dict(TEST_SEQUENCE, K_LENGTH),
         INITIAL_PROFILE_MATRIX_DICT,
     )
 )
-
+"""
 
 
 
@@ -200,7 +201,6 @@ def main():
 
 
 
-"""
+
 if __name__ == '__main__':
     main()
-"""
