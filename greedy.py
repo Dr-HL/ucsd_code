@@ -16,9 +16,6 @@ import pprint
 import kmer_generator as kg #stand-alone kmer generation module
 
 
-
-
-
 def greedy_motif_search(motif_list, k):
 
     best_motif = []

@@ -193,7 +193,9 @@ def generate_initial_profile(kmer_list):
 
 
 def main():
-    print(max_kmer_dict_values(calc_kmer_prob(sequence_kmer_generator_list(sequence, k_length), PROFILE_MATRIX_DICT)))
+    print(max_kmer_dict_values(
+    calc_kmer_prob(
+    sequence_kmer_generator_list(sequence, k_length), PROFILE_MATRIX_DICT)))
 #use logging module python3
 
 

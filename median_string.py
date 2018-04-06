@@ -7,6 +7,8 @@ import approxpatterncount as apc
 import bf_motif as bm
 import operator
 import sys
+import pprint as pprint
+import logging
 
 
 
@@ -73,12 +75,18 @@ def distance_pattern_string(k_mer, dna_list):
         dna_list"""
 
     k = len(k_mer)
+
     distance = 0
+
     sequence_kmer_dict = {}
+
     for sequence in dna_list:
         sequence_kmer_dict[sequence] = generate_kmer(sequence, k)
+
     for key, value in sequence_kmer_dict.items():
         distance += minimum_hamming_distance(k_mer, value)
+
+
     return distance
 
 
@@ -89,12 +97,19 @@ def median_string(dna_list, k):
     median_list = []
 
     distance = k * (len(dna_list) - 1)
+
     for i in range(4**k - 1):
         k_mer = ntp.number_to_pattern(i,k)
-        if distance > distance_pattern_string(k_mer,dna_list):
-            distance = distance_pattern_string(k_mer,dna_list)
+        distance_pattern = distance_pattern_string(k_mer,dna_list)
+
+        if distance > distance_pattern:
+            distance = distance_pattern
             median = k_mer
+            median_list = []
+
+        if distance == distance_pattern:
             median_list.append(k_mer)
+
     return median_list
 
 
